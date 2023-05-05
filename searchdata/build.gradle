@@ -1,0 +1,19 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id("kotlin-parcelize")
+}
+
+apply from: '../basegradle/baseui.gradle'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace 'com.henrymoya.youtubecaptions.searchdata'
+}
+
+dependencies {
+    api project(path: Modules.core)
+    api project(path: Modules.network)
+    // commons
+    //implementation Common.gson
+}

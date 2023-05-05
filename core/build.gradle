@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
+apply from: '../basegradle/baseui.gradle'
+
+dependencies {
+    implementation AndroidCompose.lifecycleRuntimeKtx
+    implementation AndroidCompose.lifecycleViewModelCompose
+
+    // navigation
+    implementation Navigation.composeDestinationCore
+}

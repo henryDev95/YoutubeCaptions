@@ -1,0 +1,23 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+apply from: '../basegradle/baseui.gradle'
+android {
+    namespace 'com.henrymoya.youtubecaptions.search'
+}
+dependencies {
+    implementation project(path: Modules.core)
+    implementation project(path: Modules.uikit)
+    implementation project(path: Modules.domain)
+    //implementation project(path: Modules.home)
+
+    // accompanist
+    implementation(Accompanist.accompanistPager)
+    implementation(Accompanist.accompanistIndicators)
+    implementation(Accompanist.accompanistNavigation)
+    implementation Accompanist.accompanistNavigationMaterial
+}
+kapt {
+    correctErrorTypes true
+}

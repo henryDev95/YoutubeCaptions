@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.henrymoya.youtubecaptions.search">
+    <application>
+        <activity
+            android:name=".SearchActivity"
+            android:exported="true"
+            android:theme="@style/Theme.YoutubeCaptions"></activity>
+    </application>
+</manifest>

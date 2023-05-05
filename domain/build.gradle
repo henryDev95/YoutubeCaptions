@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
+apply from: '../basegradle/base.gradle'
+
+dependencies {
+   api project(path: Modules.searchdata)
+
+}
+kapt {
+    correctErrorTypes true
+}
