@@ -61,11 +61,9 @@ class SplashActivity : ComponentActivity() {
                 composable(Screens.SplashScreen.route) {
                     SplashScreen(
                         onNavigateToDashboard = {
-
                             val intent = Intent(applicationContext, SearchActivity::class.java)
                             startActivity(intent)
                             finish()
-
                         }
                     )
                 }

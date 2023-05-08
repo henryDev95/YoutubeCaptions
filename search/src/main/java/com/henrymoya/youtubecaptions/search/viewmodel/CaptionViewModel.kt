@@ -4,7 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.henrymoya.youtubecaptions.domain.search.GetCaptionsUseCase
 import com.henrymoya.youtubecaptions.domain.viewstate.extension.*
 import com.henrymoya.youtubecaptions.search.uistate.CaptionUiState
-import com.loogika.ysearch.core.viewmodel.BaseViewModel
+import com.henrymoya.youtubecaptions.core.viewmodel.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

@@ -44,4 +44,7 @@ object  Versions{
     const val mixPanel =  "6.5.1"
     const val servicesLocation =  "21.0.1"
 
+    // youtubePlayer
+    const val youtubePlayer = "12.0.0"
+
 }

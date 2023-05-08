@@ -1,5 +1,6 @@
 package com.henrymoya.youtubecaptions.searchdata.datasource
 
+import com.henrymoya.youtubecaptions.core.strings.getYoutubeVideoId
 import com.henrymoya.youtubecaptions.network.di.DefaultDispatcher
 import com.henrymoya.youtubecaptions.network.di.model.error.ErrorModel
 import com.henrymoya.youtubecaptions.network.di.model.error.ErrorModel.Companion.StatusCode401
@@ -26,7 +27,7 @@ class SearchDataSource @Inject constructor(
 ) : SearchRepository {
     override suspend fun search(url: String): Flow<ResultType<List<CaptionVideoResponse>?, ErrorType>> {
         val loanApplicationsResult = kotlin.runCatching {
-            val queryResult = api.getCaptions(CaptionVideoRequest(url))
+            val queryResult = api.getCaptions(CaptionVideoRequest(url.getYoutubeVideoId()))
             queryResult
         }
 

@@ -40,6 +40,7 @@ fun FOutlineTextFieldSearch(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     maxLines: Int = 1,
     enabled: Boolean = true,
+    singleLine:Boolean = true,
     onValueChange: (String) -> Unit = {},
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -97,6 +98,7 @@ fun FOutlineTextFieldSearch(
             },
             shape = shape,
             enabled = enabled,
+            singleLine = singleLine
         )
     }
 }

@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.henrymoya.youtubecaptions.core.strings.clearEnters
+import com.henrymoya.youtubecaptions.core.strings.toSecondMinute
 import com.henrymoya.youtubecaptions.uikit.text.FTextBold
 import com.henrymoya.youtubecaptions.uikit.text.FTextRegular
 
@@ -37,7 +38,7 @@ fun ItemCaptionVideo(title: String, time: String) {
                         top.linkTo(parent.top)
                         bottom.linkTo(parent.bottom)
                     },
-                text = time,
+                text = time.toSecondMinute(),
                 fontSize = 16.sp
             )
 

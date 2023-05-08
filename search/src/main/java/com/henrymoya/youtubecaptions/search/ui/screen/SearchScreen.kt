@@ -37,7 +37,7 @@ fun SearchScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text("Listado de subtitulo")
+                    Text("Listado de subTítulo")
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.Blue,
@@ -54,7 +54,7 @@ fun SearchScreen(
         ) {
 
             FOutlineTextFieldSearch(
-                label = "Search",
+                label = "Url",
                 paddingValues = PaddingValues(horizontal = 2.dp),
                 onSearchAction = {
                     viewModel.search(it)

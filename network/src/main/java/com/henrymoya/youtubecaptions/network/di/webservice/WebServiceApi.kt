@@ -9,7 +9,7 @@ import retrofit2.http.*
 
 interface WebServiceApi {
     companion object {
-        const val API_VERSION = "v1/"
+        const val API_VERSION = "/api/v1/"
     }
 
     // método para resibir un listado de texto

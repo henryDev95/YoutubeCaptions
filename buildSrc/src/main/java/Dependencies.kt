@@ -114,3 +114,10 @@ object Lottie {
         "com.airbnb.android:lottie-compose:${Versions.lottieCompose}"
     const val lottie = "com.airbnb.android:lottie:${Versions.lottieCompose}"
 }
+
+
+object Video {
+    const val youtubePlayer =
+        "com.pierfrancescosoffritti.androidyoutubeplayer:core:${Versions.youtubePlayer}"
+    const val youtubePlayerCustomUi = "com.pierfrancescosoffritti.androidyoutubeplayer:custom-ui:${Versions.youtubePlayer}"
+}

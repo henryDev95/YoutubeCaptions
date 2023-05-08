@@ -1,4 +1,4 @@
-package com.loogika.ysearch.core.viewmodel
+package com.henrymoya.youtubecaptions.core.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
