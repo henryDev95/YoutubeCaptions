@@ -27,7 +27,7 @@ class SearchDataSource @Inject constructor(
 ) : SearchRepository {
     override suspend fun search(url: String): Flow<ResultType<List<CaptionVideoResponse>?, ErrorType>> {
         val loanApplicationsResult = kotlin.runCatching {
-            val queryResult = api.getCaptions(CaptionVideoRequest(url.getYoutubeVideoId()))
+            val queryResult = api.getCaptions(CaptionVideoRequest(url))
             queryResult
         }
 

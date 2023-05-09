@@ -9,14 +9,19 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.henrymoya.youtubecaptions.core.flow.rememberFlowWithLifecycle
+import com.henrymoya.youtubecaptions.core.strings.getYoutubeVideoId
+import com.henrymoya.youtubecaptions.core.R
 import com.henrymoya.youtubecaptions.search.uistate.CaptionUiState
 import com.henrymoya.youtubecaptions.search.viewmodel.CaptionViewModel
 import com.henrymoya.youtubecaptions.uikit.progressbar.LoadingProgressWidget
 import com.henrymoya.youtubecaptions.uikit.row.ItemCaptionVideo
 import com.henrymoya.youtubecaptions.uikit.textfield.FOutlineTextFieldSearch
+import com.henrymoya.youtubecaptions.uikit.video.UiVideoPlayer
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -30,6 +35,8 @@ fun SearchScreen(
     val captionState by rememberFlowWithLifecycle(viewModel.captionState)
         .collectAsState(initial = CaptionUiState.Empty)
 
+    val context = LocalContext.current
+
     Scaffold(
         modifier = Modifier
             .fillMaxWidth()
@@ -37,7 +44,7 @@ fun SearchScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text("Listado de subTítulo")
+                    Text(stringResource(id = R.string.app_name))
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.Blue,
@@ -57,9 +64,20 @@ fun SearchScreen(
                 label = "Url",
                 paddingValues = PaddingValues(horizontal = 2.dp),
                 onSearchAction = {
-                    viewModel.search(it)
+                    viewModel.search(it.getYoutubeVideoId())
+
                 }
             )
+
+            if (captionState.videoId.isNotEmpty()) {
+                UiVideoPlayer(
+                    modifier = Modifier.padding(vertical = 8.dp),
+                    videoId = captionState.videoId,
+                    context = context
+                )
+            }
+
+
             LazyColumn(
                 modifier = Modifier
                     .padding(top = 20.dp)

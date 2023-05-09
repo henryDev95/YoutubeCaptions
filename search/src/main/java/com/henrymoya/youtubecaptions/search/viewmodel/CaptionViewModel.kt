@@ -23,7 +23,7 @@ class CaptionViewModel @Inject constructor(
             captionState.value = CaptionUiState.Loading
             getCaptionsUseCase(params) collectAsSuccess {
                 captionState.value = CaptionUiState(
-                    isLoading = false, captionsResult = it ?: emptyList()
+                    isLoading = false, captionsResult = it ?: emptyList() , videoId = params
                 )
 
             } collectAsUnAuthorized {
