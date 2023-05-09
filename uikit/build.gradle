@@ -17,4 +17,7 @@ dependencies {
     // lottie
     implementation Lottie.lottieCompose
     implementation AndroidCompose.coilCompose
+    //video players
+
+    implementation Video.youtubePlayer
 }
